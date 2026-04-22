@@ -24,7 +24,7 @@ console.log(userOne.username);
 console.log(userOne.logout()); */
 
 
-class BankAccount{
+/* class BankAccount{
     #balance;
 
     constructor(owner, initialBalance){
@@ -49,10 +49,10 @@ class BankAccount{
 const myAccount = new BankAccount("charles", 1000);
 // console.log(BankAccount.owner)
 myAccount.deposit(100);
-console.log(myAccount.getBalance()) 
+console.log(myAccount.getBalance()) */
 
 
-class Animal{
+/* class Animal{
     constructor(name){
         this.name = name;
     }
@@ -75,8 +75,40 @@ class Dog extends Animal{
 
 const myDog = new Dog("Rex", "German Shepherd");
 
-myDog.eat();
+// myDog.eat();
 
 
-myDog.bark();
+// myDog.bark(); */
 
+
+// Polymorphism
+
+class Employee{
+    constructor(name){
+        this.name;
+    }
+
+    calculatePay(){
+        return "Calculating standard employee pay...";
+    }
+}
+
+class Manager extends Employee{
+    calculatePay(){
+        return "Calculating Manager pay...";
+    }
+}
+
+class Intern extends Employee{
+    calculatePay(){
+        return "Calculating Intern pay with(bonus + salary)...";
+    }
+}
+
+const worker = new Employee("Charles");
+const worker1 = new Manager("Chinedu");
+const worker2 = new Intern("Anyone");
+
+console.log(worker.calculatePay());
+console.log(worker1.calculatePay());
+console.log(worker2.calculatePay());
